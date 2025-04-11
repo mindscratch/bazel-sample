@@ -1,0 +1,1 @@
+Sample bazel project using Bazel 7 with rules_go 0.53.0 demonstrating how to access the Go binary provided by rules_go to execute `go fmt`.

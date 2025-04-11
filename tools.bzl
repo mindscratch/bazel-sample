@@ -45,6 +45,7 @@ def _go_sdk_tool_impl(ctx):
         executable = launcher_script,
     )]
 
+# copied from buildbuddy: https://github.com/buildbuddy-io/buildbuddy/blob/master/rules/go/index.bzl
 go_sdk_tool = rule(
     doc = "Declares a run target from the go SDK.",
     attrs = {
