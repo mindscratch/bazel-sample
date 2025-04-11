@@ -1,0 +1,15 @@
+load("//:tools.bzl", "go_sdk_tool")
+
+sh_binary(
+    name = "go_sh",
+    srcs = ["go.sh"],
+    data = ["@rules_go//go"],
+    env = {"GO": "$(rlocationpath @rules_go//go)"},
+    visibility = ["//visibility:public"],
+    deps = ["@bazel_tools//tools/bash/runfiles"],
+)
+
+go_sdk_tool(
+    name = "gofmt",
+    goroot_relative_path = "bin/gofmt",
+)

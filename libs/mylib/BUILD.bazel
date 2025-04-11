@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library")
+load("//:tools.bzl", "create_lib")
+
+create_lib(
+    "mylib-stuff",
+    ["hello.go"],
+)
+
+go_library(
+    name = "mylib",
+    srcs = [
+        "hello.go",
+    ],
+    importpath = "myapp.com/go/mylib",
+)
